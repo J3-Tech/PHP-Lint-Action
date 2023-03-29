@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: PHP-Lint
-      uses: J3-Tech/PHP-Lint-Action@v0.0.4
+      uses: J3-Tech/PHP-Lint-Action@v0.0.5
       with:
         path: .
         exclude: vendor
