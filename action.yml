@@ -1,4 +1,4 @@
-name: PHPLint
+name: PHPLintAction
 description: Run your PHP Lint in your Github Actions.
 
 inputs:
