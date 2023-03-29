@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-github_action_path=$(dirname "$0")
 
 command_string=("parallel-lint")
 
@@ -18,4 +17,4 @@ docker run --rm \
 	--volume "${GITHUB_WORKSPACE}":/app \
 	--workdir /app \
 	--network host \
-	jchellem/php-dev:main-8.1-cli "${command_string[@]}" && echo "PHPMD completed successfully"
+	jchellem/php-dev:main-8.1-cli "${command_string[@]}" && echo "PHPLint completed successfully"
