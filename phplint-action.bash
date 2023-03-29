@@ -4,6 +4,11 @@ github_action_path=$(dirname "$0")
 
 command_string=("parallel-lint")
 
+if [ -n "$ACTION_PATH" ]
+then
+	command_string+=("$ACTION_PATH")
+fi
+
 if [ -n "$ACTION_EXCLUDE" ]
 then
 	command_string+=(--exclude "$ACTION_EXCLUDE")

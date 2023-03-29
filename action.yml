@@ -2,6 +2,10 @@ name: PHP Lint
 description: Run your PHP Lint in your Github Actions.
 
 inputs:
+  path:
+    description: A php source code filename or directory. Can be a comma-separated string
+    required: true
+
   exclude:
     description: comma-separated string of patterns that are used to ignore directories. Use asterisks to exclude by pattern. For example *src/foo/*.php or *src/foo/*
     required: false
