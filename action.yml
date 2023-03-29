@@ -1,0 +1,24 @@
+name: PHP Lint
+description: Run your PHP Lint in your Github Actions.
+
+inputs:
+  exclude:
+    description: comma-separated string of patterns that are used to ignore directories. Use asterisks to exclude by pattern. For example *src/foo/*.php or *src/foo/*
+    required: false
+
+runs:
+  using: "composite"
+  steps:
+    - env:
+        ACTION_EXCLUDE: ${{ inputs.exclude }}
+
+      id: phplint_run
+      run: |
+        set -e
+        bash <(curl -s https://raw.githubusercontent.com/J3-Tech/PHP-Lint-Action/main/phplint-action.bash) phplint
+        ${{ github.action_path }}/phplint-action.bash
+      shell: bash
+
+branding:
+  icon: 'check-square'
+  color: 'purple'
